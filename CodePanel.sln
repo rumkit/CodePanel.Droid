@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePanel.Android", "CodePanel\CodePanel.Android\CodePanel.Android.csproj", "{3BFF8055-4D34-4531-BD48-89F0AE5B2572}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CodePanel", "CodePanel\CodePanel\CodePanel.shproj", "{98379FC0-506A-45F8-BA5D-941C8ACF6A13}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CodePanel\CodePanel\CodePanel.projitems*{3bff8055-4d34-4531-bd48-89f0ae5b2572}*SharedItemsImports = 4
+		CodePanel\CodePanel\CodePanel.projitems*{98379fc0-506a-45f8-ba5d-941c8acf6a13}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BFF8055-4D34-4531-BD48-89F0AE5B2572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BFF8055-4D34-4531-BD48-89F0AE5B2572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BFF8055-4D34-4531-BD48-89F0AE5B2572}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3BFF8055-4D34-4531-BD48-89F0AE5B2572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BFF8055-4D34-4531-BD48-89F0AE5B2572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BFF8055-4D34-4531-BD48-89F0AE5B2572}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8848C49-AC41-4A27-9D8C-0E21D9CF411D}
+	EndGlobalSection
+EndGlobal
