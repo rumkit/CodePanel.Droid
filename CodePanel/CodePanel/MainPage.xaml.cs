@@ -49,5 +49,11 @@ namespace CodePanel
                 ConfirmButton.BackgroundColor = Color.Gray;
 	        }
 	    }
+
+	    async private void ConfirmButton_OnClicked(object sender, EventArgs e)
+	    {
+	        await Navigation.PushModalAsync(new LoadingPage(PasswordEntry.Text));
+	        PasswordEntry.Text = string.Empty;
+	    }
 	}
 }

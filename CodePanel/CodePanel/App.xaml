@@ -3,6 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CodePanel.App">
 	<Application.Resources>
-    
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="32"></Setter>
+        </Style>
+	    <Style TargetType="Button" x:Key="NavButton">
+	        <Setter Property="FontSize" Value="32"/>
+	        <Setter Property="HeightRequest" Value="80"/>
+	        <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="BackgroundColor" Value="Gray"/>
+	        <Setter Property="VerticalOptions" Value="End"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+        <Color x:Key="MainThemeColor">DeepSkyBlue</Color>
 	</Application.Resources>
 </Application>
