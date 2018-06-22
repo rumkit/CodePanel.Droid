@@ -4,11 +4,49 @@
              xmlns:local="clr-namespace:CodePanel"
              x:Class="CodePanel.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <StackLayout VerticalOptions="Fill">
+
+            <Grid Margin="0,100,0,0" HorizontalOptions="CenterAndExpand">
+                <local:PasswordEntry x:Name="PasswordEntry" Text="" IsEnabled="False" FontSize="48" TextChanged="PasswordEntry_OnTextChanged"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Center" WidthRequest="240"/>
+                <Button x:Name="EraseButton" Text="x" HeightRequest="80" BackgroundColor="Transparent"
+                    FontSize="32" HorizontalOptions="End" Clicked="EraseButton_Clicked"/>
+            </Grid>
+            
+            <Grid x:Name="PanelGrid" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" >
+                <Grid.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="FontSize" Value="32"/>
+                        <Setter Property="BackgroundColor" Value="DeepSkyBlue"></Setter>
+                    </Style>
+                </Grid.Resources>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="1" Grid.Column="0" Grid.Row="0"/>
+                <Button Text="2" Grid.Column="1" Grid.Row="0"/>
+                <Button Text="3" Grid.Column="2" Grid.Row="0"/>
+                <Button Text="4" Grid.Column="0" Grid.Row="1"/>
+                <Button Text="5" Grid.Column="1" Grid.Row="1"/>
+                <Button Text="6" Grid.Column="2" Grid.Row="1"/>
+                <Button Text="7" Grid.Column="0" Grid.Row="2"/>
+                <Button Text="8" Grid.Column="1" Grid.Row="2"/>
+                <Button Text="9" Grid.Column="2" Grid.Row="2"/>
+                <Button Text="0" Grid.Column="1" Grid.Row="3"/>
+            </Grid>
+            <Button x:Name="ConfirmButton" BackgroundColor="Gray" VerticalOptions="End" Text="OK" FontSize="32" IsEnabled="False"></Button>
+        </StackLayout>
+        <Grid BackgroundColor="Transparent" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+    </Grid>
 
 </ContentPage>
