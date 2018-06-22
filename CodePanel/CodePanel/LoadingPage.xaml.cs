@@ -20,6 +20,11 @@ namespace CodePanel
 		    _password = password;
 		}
 
+	    public LoadingPage()
+	    {
+	        
+	    }
+
 	    protected override void OnAppearing()
 	    {
 	        base.OnAppearing();
@@ -37,31 +42,34 @@ namespace CodePanel
 
 	    private async Task ShowResult()
 	    {
-	        string header = string.Empty;
-	        string message = string.Empty;
 	        StatusLabel.Text = string.Empty;
 	        if (AppData.Hints.ContainsKey(_password))
 	        {
-	            header = "Успех";
-	            message = AppData.Hints[_password];
+	            ResultLabel.Text = "Успех";
+	            HintLabel.Text = AppData.Hints[_password];
+                ResultGrid.BackgroundColor = Color.DeepSkyBlue;
 	        }
 	        else
 	        {
-	            header = "Провал";
-	            message = "Пароль неверный";
+	            ResultLabel.Text = "Пароль неверный";
+	            HintLabel.IsVisible = false;
+	            ResultGrid.BackgroundColor = Color.IndianRed;
 	        }
 
-	        await DisplayAlert(header, message, "Закрыть");
+	        ResultGrid.IsVisible = true;
+	        LoadingGrid.IsVisible = false;
 	    }
 
 	    private async void ProgressTask()
 	    {
-            for (int i = 0; i < 1000; i++)
+	        const int max = 800;
+	        const int statusUpdateRate = 5;
+            for (int i = 0; i < max; i++)
 	        {
 	            await Task.Delay(10);
-	            if (i % 201 == 0)
+	            if (i % (max / statusUpdateRate + 1) == 0)
 	                StatusLabel.Text = AppData.LoadingStrings.GetRandomElement();
-	            LoadingBar.Progress = 0.001 * i;
+	            LoadingBar.Progress = 0.00125 * i;
             }
 
 	        await ShowResult();

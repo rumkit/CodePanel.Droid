@@ -4,12 +4,21 @@
              x:Class="CodePanel.LoadingPage">
     <ContentPage.Content>
         <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
-            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+            <Grid x:Name="LoadingGrid" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
                 <ProgressBar x:Name="LoadingBar" ProgressColor="{StaticResource MainThemeColor}"
                              Progress="0.5" WidthRequest="240" VerticalOptions="Center"/>
                 <Label x:Name="StatusLabel" WidthRequest="240" VerticalOptions="CenterAndExpand" Margin="0,50,0,0"
                 Text="Раскрутка торсионных полей и еще много всякого текста"/>
             </Grid>
+            <StackLayout x:Name="ResultGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="False">
+                <StackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="32"></Setter>
+                    </Style>
+                </StackLayout.Resources>
+                <Label x:Name="ResultLabel" HorizontalOptions="Center" Margin="0,100,0,0"></Label>
+                <Label x:Name="HintLabel" HorizontalOptions="Center"></Label>
+            </StackLayout>
             <Button x:Name="BackButton" Text="Назад" Style="{StaticResource NavButton}" Clicked="BackButton_OnClicked"></Button>
         </Grid>
     </ContentPage.Content>
