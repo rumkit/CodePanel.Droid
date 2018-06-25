@@ -33,34 +33,35 @@ namespace CodePanel
             task.RunSynchronously();
 	    }
 
-	    private async Task EnableNavigation()
-	    {
-	        _canNavigateBack = true;
-	        BackButton.IsEnabled = true;
-	        BackButton.BackgroundColor = Color.Green;
-	    }
+        private void EnableNavigation()
+        {
+            _canNavigateBack = true;
+            BackButton.IsEnabled = true;
+            BackButton.BackgroundColor = Color.Green;
+        }
 
-	    private async Task ShowResult()
-	    {
-	        StatusLabel.Text = string.Empty;
-	        if (AppData.Hints.ContainsKey(_password))
-	        {
-	            ResultLabel.Text = "Успех";
-	            HintLabel.Text = AppData.Hints[_password];
+        private void ShowResult()
+        {
+            StatusLabel.Text = string.Empty;
+            if (AppData.Hints.ContainsKey(_password))
+            {
+                ResultLabel.Text = "Успех";
+                HintLabel.Text = AppData.Hints[_password];
                 ResultGrid.BackgroundColor = Color.DeepSkyBlue;
-	        }
-	        else
-	        {
-	            ResultLabel.Text = "Пароль неверный";
-	            HintLabel.IsVisible = false;
-	            ResultGrid.BackgroundColor = Color.IndianRed;
-	        }
+            }
+            else
+            {
+                ResultLabel.Text = "Пароль неверный";
+                ResultLabel.BackgroundColor = Color.OrangeRed;
+                ResultLabel.TextColor = Color.White;
+                HintLabel.IsVisible = false;
+            }
 
-	        ResultGrid.IsVisible = true;
-	        LoadingGrid.IsVisible = false;
-	    }
+            ResultGrid.IsVisible = true;
+            LoadingGrid.IsVisible = false;
+        }
 
-	    private async void ProgressTask()
+        private async void ProgressTask()
 	    {
 	        const int max = 800;
 	        const int statusUpdateRate = 5;
@@ -72,8 +73,8 @@ namespace CodePanel
 	            LoadingBar.Progress = 0.00125 * i;
             }
 
-	        await ShowResult();
-	        await EnableNavigation();
+	        ShowResult();
+	        EnableNavigation();
 	    }
 
 	    protected override bool OnBackButtonPressed()

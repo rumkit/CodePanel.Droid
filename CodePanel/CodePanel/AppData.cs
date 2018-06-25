@@ -6,10 +6,10 @@ namespace CodePanel
 {
     static class AppData
     {
+        private static readonly Random Random = new Random(DateTime.Now.Millisecond);
         public static T GetRandomElement<T>(this T[] array)
         {
-            var random = new Random(DateTime.Now.Millisecond);
-            return array[random.Next(array.Length - 1)];
+            return array[Random.Next(array.Length - 1)];
         }
 
         public static string[] LoadingStrings =
@@ -21,13 +21,13 @@ namespace CodePanel
             "Восхваление Вишну",
             "Просто немного подождем",
             "Учет стратосферных колебаний",
-            "Рассчет подгониана",
+            "Расчет подгониана",
             "Подсаживаем аккумулятор",
             "Форматирование карты памяти",
             "Построение атласа нормалей поверхности Юпитера",
-            "Рассчет алкогольной зависимости",
+            "Расчет алкогольной зависимости",
             "В Солекамске приезжие игуаны объявляют забастовку",
-            "Просчет вероятностей треш-детектора"
+            "Расчет вероятностей треш-детектора"
         };
 
         public static Dictionary<string,string> Hints =
