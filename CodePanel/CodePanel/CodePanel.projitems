@@ -11,12 +11,29 @@
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)PasswordPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\quest3.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\quest4.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\quest6.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\quest5.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\quest7.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\quest8.txt" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\quest2.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\task3.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\task4.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\task6.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\task5.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\task8.txt" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\task7.txt" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestData\task2.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)InfoMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InfoPage.xaml.cs">
+      <DependentUpon>InfoPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
@@ -57,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)TaskPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)InfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

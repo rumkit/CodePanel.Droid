@@ -27,7 +27,7 @@ namespace CodePanel
 
         private async void NextButton_OnClicked(object sender, EventArgs e)
 	    {
-	        await Navigation.PushModalAsync(new PasswordPage());
+	        await Navigation.PushAsync(new PasswordPage());
         }
 	}
 }

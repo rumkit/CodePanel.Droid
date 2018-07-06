@@ -41,13 +41,19 @@ namespace CodePanel
             BackButton.BackgroundColor = Color.Green;
         }
 
-        private void ShowResult()
+        private async void ShowResult()
         {
             StatusLabel.Text = string.Empty;
             if (_password == AppData.CurrentQuest.QuestAnswer)
             {
-                Application.Current.Properties["CurrentQuestId"] = (int)Application.Current.Properties["CurrentQuestId"] + 1;
-                Application.Current.MainPage = new NavigationPage(new QuestPage());
+                var nextQuestAvailable = AppData.NextQuest();
+                await Application.Current.SavePropertiesAsync();
+                if(nextQuestAvailable)
+                    Application.Current.MainPage = new NavigationPage(new QuestPage());
+                else
+                {
+                    Application.Current.MainPage = new NavigationPage(new InfoPage(AppData.GreetingsMessages, true));
+                }
             }
             else
             {
