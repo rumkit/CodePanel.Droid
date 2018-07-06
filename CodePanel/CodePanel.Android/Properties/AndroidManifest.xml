@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.CodePanel.Android">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.RumCode.Henparty.Android" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
-	<application android:label="CodePanel.Android">
-	  <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
-	  <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
-  </application>
+	<application android:label="HenParty.Android" android:icon="@drawable/icon">
+		<uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+		<uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+	</application>
 </manifest>
