@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace CodePanel
 {
-	public partial class MainPage : ContentPage
+	public partial class PasswordPage : ContentPage
 	{
-		public MainPage()
+		public PasswordPage()
 		{
 			InitializeComponent();
 		    foreach (var child in PanelGrid.Children)
@@ -33,7 +33,7 @@ namespace CodePanel
 	        PasswordEntry.Text = string.Empty;
 	    }
 
-        private const int PasswordLength = 5;
+        private const int PasswordLength = 4;
 
 	    private void PasswordEntry_OnTextChanged(object sender, TextChangedEventArgs e)
 	    {

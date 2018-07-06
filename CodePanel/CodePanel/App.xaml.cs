@@ -10,8 +10,9 @@ namespace CodePanel
 		public App ()
 		{
 			InitializeComponent();
-
-		    MainPage = new NavigationPage(new MainPage());
+		    if (!Application.Current.Properties.ContainsKey("CurrentQuestId"))
+		        Application.Current.Properties["CurrentQuestId"] = 1;
+		    MainPage = new NavigationPage(new QuestPage());
         }
 
 		protected override void OnStart ()

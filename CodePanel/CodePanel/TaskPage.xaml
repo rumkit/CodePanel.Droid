@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CodePanel.TaskPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <Label x:Name="QuestContent" FontSize="24"/>
+            </ScrollView>
+            <Button x:Name="NextButton" Style="{StaticResource NavButton}" Text="Ответ" Clicked="NextButton_OnClicked"
+                    VerticalOptions="EndAndExpand" IsEnabled="True"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -19,7 +19,7 @@
                 <Label x:Name="ResultLabel" HorizontalOptions="Center" Margin="0,100,0,0"></Label>
                 <Label x:Name="HintLabel" HorizontalOptions="Center"></Label>
             </StackLayout>
-            <Button x:Name="BackButton" Text="Назад" Style="{StaticResource NavButton}" Clicked="BackButton_OnClicked"></Button>
+            <Button x:Name="BackButton" Text="Назад" Style="{StaticResource NavButton}" IsVisible="False" Clicked="BackButton_OnClicked"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -9,8 +9,8 @@
 	    <Style TargetType="Button" x:Key="NavButton">
 	        <Setter Property="FontSize" Value="32"/>
 	        <Setter Property="HeightRequest" Value="80"/>
-	        <Setter Property="IsEnabled" Value="False"/>
-            <Setter Property="BackgroundColor" Value="Gray"/>
+	        <Setter Property="IsEnabled" Value="True"/>
+            <Setter Property="BackgroundColor" Value="Green"/>
 	        <Setter Property="VerticalOptions" Value="End"/>
             <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
         </Style>

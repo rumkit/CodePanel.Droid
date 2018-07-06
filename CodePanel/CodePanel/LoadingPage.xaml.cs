@@ -37,17 +37,17 @@ namespace CodePanel
         {
             _canNavigateBack = true;
             BackButton.IsEnabled = true;
+            BackButton.IsVisible = true;
             BackButton.BackgroundColor = Color.Green;
         }
 
         private void ShowResult()
         {
             StatusLabel.Text = string.Empty;
-            if (AppData.Hints.ContainsKey(_password))
+            if (_password == AppData.CurrentQuest.QuestAnswer)
             {
-                ResultLabel.Text = "Успех";
-                HintLabel.Text = AppData.Hints[_password];
-                ResultGrid.BackgroundColor = Color.DeepSkyBlue;
+                Application.Current.Properties["CurrentQuestId"] = (int)Application.Current.Properties["CurrentQuestId"] + 1;
+                Application.Current.MainPage = new NavigationPage(new QuestPage());
             }
             else
             {
@@ -55,6 +55,7 @@ namespace CodePanel
                 ResultLabel.BackgroundColor = Color.OrangeRed;
                 ResultLabel.TextColor = Color.White;
                 HintLabel.IsVisible = false;
+                EnableNavigation();
             }
 
             ResultGrid.IsVisible = true;
@@ -74,7 +75,6 @@ namespace CodePanel
             }
 
 	        ShowResult();
-	        EnableNavigation();
 	    }
 
 	    protected override bool OnBackButtonPressed()
