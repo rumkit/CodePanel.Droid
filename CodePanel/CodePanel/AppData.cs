@@ -113,7 +113,7 @@ namespace CodePanel
             return true;
         }
 
-        public static int QuestCount => Quests.Length;
+        public static int QuestCount => 1;
         public static Quest CurrentQuest
         {
             get

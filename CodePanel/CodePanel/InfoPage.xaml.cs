@@ -43,8 +43,11 @@ namespace CodePanel
             var message = GetInfoMessage();
             if (message == null)
             {
-                if(_quitOnMessageEnd)
-                    Application.Current.Quit();
+                if (_quitOnMessageEnd)
+                {
+                    System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+                    return;
+                }
                 var nextQuestAvailable = AppData.NextQuest();
                 await Application.Current.SavePropertiesAsync();
                 if (nextQuestAvailable)
